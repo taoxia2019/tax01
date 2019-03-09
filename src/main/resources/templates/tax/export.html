@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>上传下载页面</title>
+
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style type="text/css">
+* {
+	font-family: 微软雅黑；
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+	
+	<div class="page-header">
+		<h3>文件交互</h3>
+	</div>
+		<!-- <input type="button" value="导出数据" onclick="download()"/> -->
+		<form action="exportall" method="post">
+			<input type="submit" value="导出数据" />
+		</form>
+
+		<hr />
+		<span th:text="Hello"></span>
+
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default" onclick="exportall()">下载数据</button>
+			<button type="button" class="btn btn-default" onclick="importall()">上传数据</button>
+		</div>
+		<button type="button" class="btn btn-success">（成功）Success</button>
+
+		<hr />
+		<form action="importall" method="post" enctype="multipart/form-data"
+			class="form-horizontal" >
+			<div class="form-group">
+				上传文件：</label> <input type="file" name="filename">
+			</div>
+			<input class="btn btn-default" type="submit" value="提交">
+		</form>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+	function exportall() {
+		var url = "exportall";
+		window.open(url);
+	}
+
+	function importall() {
+		var url = "importall";
+		window.open(url);
+	}
+</script>
+</html>

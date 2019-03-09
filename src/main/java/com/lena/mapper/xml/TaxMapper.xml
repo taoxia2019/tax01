@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lena.mapper.TaxMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lena.entity.Tax">
+        <result column="id" property="id" />
+        <result column="xingming" property="xingming" />
+        <result column="zhengzhaoleixing" property="zhengzhaoleixing" />
+        <result column="zhengzhaohaoma" property="zhengzhaohaoma" />
+        <result column="benqishouru" property="benqishouru" />
+        <result column="benqimianshuishouru" property="benqimianshuishouru" />
+        <result column="jibenyanglaobaoxian" property="jibenyanglaobaoxian" />
+        <result column="jibenyiliaobaoxianfei" property="jibenyiliaobaoxianfei" />
+        <result column="shiyebaoxianfei" property="shiyebaoxianfei" />
+        <result column="zhufanggongjijin" property="zhufanggongjijin" />
+        <result column="leijizinvjiaoyu" property="leijizinvjiaoyu" />
+        <result column="leijijixujiaoyu" property="leijijixujiaoyu" />
+        <result column="leijizhufangdaikuanlixi" property="leijizhufangdaikuanlixi" />
+        <result column="leijizhufangzujin" property="leijizhufangzujin" />
+        <result column="leijishanyanglaoren" property="leijishanyanglaoren" />
+        <result column="qiyenianjin" property="qiyenianjin" />
+        <result column="shangyejiankangbaoxian" property="shangyejiankangbaoxian" />
+        <result column="shuiyanyanglaobaoxian" property="shuiyanyanglaobaoxian" />
+        <result column="qita" property="qita" />
+        <result column="zhunyukouchudejuanzenge" property="zhunyukouchudejuanzenge" />
+        <result column="jianmianshuie" property="jianmianshuie" />
+        <result column="leijiyingbutuishuie" property="leijiyingbutuishuie" />
+        <result column="dept" property="dept" />
+        <result column="creatdate" property="creatdate" />
+    </resultMap>
+
+</mapper>

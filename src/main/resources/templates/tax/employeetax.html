@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>网站后台管理</title>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style type="text/css">
+			* {
+				font-family: 微软雅黑；
+			}
+		</style>
+
+		<style type="text/css">
+			@media (min-width: 768px) {
+				#slider_sub {
+					width: 150px;
+					margin-top: 51px;
+					position: absolute;
+					z-index: 1;
+					height: 600px;
+				}
+				.mysearch {
+					margin: 10px 0;
+				}
+				.page_main {
+					margin-left: 150px;
+					margin-top: -20px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 导航条  -->
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#slider_sub">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+				<a href="#" class="navbar-brand">测试系统</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right" style="margin-right: 25px;">
+				<!--<li>-->
+					<!--<a href="#"><span class="badge" style="background: #C12E2A;">23</span></a>-->
+				<!--</li>-->
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;注销</a>
+				</li>
+			</ul>
+
+			<!--    侧边栏-->
+			<div class="navbar-default navbar-collapse" id="slider_sub">
+				<ul class="nav">
+					<li>
+						<!--搜索-->
+						<!--<div class="input-group mysearch">
+							<input type="text" class="form-control" />
+							<span class="input-group-btn">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span>
+							</button>
+							</span>
+						</div>-->
+					</li>
+					<li>
+						<a href="#sub1" data-toggle="collapse" >税务功能<span class="glyphicon glyphicon-chevron-right pull-right" ></a>
+				<ul id="sub1" class="nav collapse" >
+					<li><a th:href="@{/tax/submit}"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;部门税务提交</a>
+					</li>
+					<li>
+						<a th:href="@{/tax/employeetax}"><span class="glyphicon glyphicon-user"></span>&nbsp;部门查询列表</a>
+					</li>
+					<li>
+						<a th:href="@{/tax/employeetax}"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;全部员工列表</a>
+					</li>
+					<!--<li>
+						<a href="#"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;退出</a>
+					</li>-->
+				</ul>
+
+				</li>
+				<li>
+					<a href="#sub2" data-toggle="collapse">栏目功能<span class="glyphicon glyphicon-chevron-right pull-right"></a>
+				<ul id="sub2" class="nav collapse">
+					<li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;系统管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;管理员管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;日志信息</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;退出</a>
+				</li>
+				</ul>
+
+				</li>
+				<li>
+					<a href="#sub3" data-toggle="collapse">产品功能<span class="glyphicon glyphicon-chevron-right pull-right"></a>
+				<ul id="sub3" class="nav collapse">
+					<li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;系统管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;管理员管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;日志信息</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;退出</a>
+				</li>
+				</ul>
+
+				</li>
+				<li>
+					<a href="#sub4" data-toggle="collapse">新闻功能<span class="glyphicon glyphicon-chevron-right pull-right"></a>
+				<ul id="sub4" class="nav collapse">
+					<li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;系统管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;管理员管理</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;日志信息</a>
+				</li>
+				<li>
+					<a href="#"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;退出</a>
+				</li>
+				</ul>
+
+				</li>
+
+				</ul>
+
+			</div>
+
+		</nav>
+		<!--   主体表格部分-->
+		<div class="page_main" style="margin-top: -20px;">
+			<!--<ol class="breadcrumb">
+				<li>
+					<a href="#">管理首页</a>
+				</li>
+				<li>
+					<a href="#">栏目</a>
+				</li>
+				<li class="active">增加栏目</li>
+			</ol>-->
+			<!--row-->
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading"> 最新数据</div>
+						<div class="panel-body ">
+							<table class="table table-bordered table-striped table-hover ">
+								<thead>
+								<tr>
+
+									<th>序号</th>
+									<th>姓名</th>
+									<!--<th>证照类型3</th>
+									<th>证照号码4</th>-->
+
+									<th>本期收入</th>
+									<th>本期免税收入</th>
+									<th>基本养老保险费</th>
+									<th>基本医疗保险费</th>
+									<th>失业保险费</th>
+
+									<th>住房公积金</th>
+									<th>累计子女教育</th>
+									<th>累计继续教育</th>
+
+									<th>累计住房贷款利息</th>
+									<th>累计住房租金</th>
+									<th>累计赡养老人</th>
+									<th>企业(职业)年金</th>
+
+									<th>商业健康保险</th>
+									<th>税延养老保险</th>
+									<th>其他</th>
+									<th>准予扣除的捐赠额</th>
+
+									<th>减免税额</th>
+									<th>累计应补(退)税额</th>
+									<th>表格</th>
+									<th>创建时间</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr th:each="tax:${taxlist}">
+
+									<td th:text="${tax.id}">1</td>
+									<td th:text="${tax.xingming}"></td>
+									<!--<td th:text="${tax.zhengzhaoleixing}"></td>
+									<td th:text="${tax.zhengzhaohaoma}"></td>-->
+
+									<td th:text="${tax.benqishouru}"></td>
+									<td th:text="${tax.benqimianshuishouru}"></td>
+									<td th:text="${tax.jibenyanglaobaoxian}"></td>
+									<td th:text="${tax.jibenyiliaobaoxianfei}"></td>
+
+									<td th:text="${tax.shiyebaoxianfei}"></td>
+									<td th:text="${tax.zhufanggongjijin}"></td>
+									<td th:text="${tax.leijizinvjiaoyu}"></td>
+									<td th:text="${tax.leijijixujiaoyu}"></td>
+
+									<td th:text="${tax.leijizhufangdaikuanlixi}"></td>
+									<td th:text="${tax.leijizhufangzujin}"></td>
+									<td th:text="${tax.leijishanyanglaoren}"></td>
+									<td th:text="${tax.qiyenianjin}"></td>
+
+									<td th:text="${tax.shangyejiankangbaoxian}"></td>
+									<td th:text="${tax.shuiyanyanglaobaoxian}"></td>
+									<td th:text="${tax.qita}"></td>
+									<td th:text="${tax.zhunyukouchudejuanzenge}"></td>
+
+									<td th:text="${tax.jianmianshuie}"></td>
+									<td th:text="${tax.leijiyingbutuishuie}"></td>
+									<td th:text="${tax.dept}"></td>
+									<td th:text="${tax.creatdate}"></td>
+								</tr>
+
+								</tbody>
+							</table>
+							<nav aria-label="Page navigation" class="pull-left">
+								<ul class="pagination" style="margin-top: -5px;">
+									<li>
+										<a href="#" aria-label="Previous">
+											<span aria-hidden="true">上一页</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li>
+										<a href="#" aria-label="Next">
+											<span aria-hidden="true">下一页</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			<!--row-->
+
+		</div>
+
+		</div>
+
+		</div>
+		<!--page_main-->
+
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+
+</html>
